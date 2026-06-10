@@ -44,6 +44,68 @@ Converts complex raw text user supplier inputs into strict, verified hierarchica
 
 ---
 
+## 🎨 Frontend Architecture & Wireframe Layout
+
+EcoChain implements a custom **High-Density Swiss Industrial Wireframe Theme** created purely with modern Tailwind CSS v4 variables, designed specifically to communicate rigorous, professional engineering.
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                SYSTEM HEADER                                 │
+│  [E] EcoChain                     [NODE: localhost:3000]    [SYSTEM SPECS]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │                     1. GENERATIVE LCA MODEL INPUT                      │  │
+│  │   [ Describe physical product...                                   ]   │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌────────────────────────────────────────┐ ┌──────────────────────────────┐  │
+│  │        2. TWIN SIMULATOR SLIDERS       │ │ 3. DYNAMIC METRIC CHARTS     │  │
+│  │   - Batch Volume: [========O       ]   │ │   MAX MT CO2e ──┐            │  │
+│  │   - Primary Material: (Recycled)       │ │                 │            │  │
+│  │   - Freight Method: (Diesel Truck)     │ │   Sandbox ──────┼──┐         │  │
+│  │   - Factory Grid Mix: (Solar-Hydro)    │ │                 │  │  Opt-ESG│  │
+│  │   - End of Life Loop: (Incinerate)     │ │                 └──┴─────┘   │  │
+│  │   [Reset Baseline]                     │ │   [Benchmark]  Sandbox  Opt  │  │
+│  └────────────────────────────────────────┘ └──────────────────────────────┘  │
+│                                                                              │
+│  ┌────────────────────────────────────────┐ ┌──────────────────────────────┐  │
+│  │        4. LOGISTICS PATH LIST          │ │ 5. DETAILED SEGMENT ANALYSIS │  │
+│  │   • Stage 1: Extraction  [Risk 25/100] │ │   Sourcing Location: Asia    │  │
+│  │   • Stage 2: Processing  [Risk 52/100] │ │   Materials Used: PET, Glass │  │
+│  │   • Stage 3: Transit     [Risk 80/100] │ │   Off-set Roadmap: Re-route  │  │
+│  └────────────────────────────────────────┘ └──────────────────────────────┘  │
+│                                                                              │
+│  ┌────────────────────────────────────────┐ ┌──────────────────────────────┐  │
+│  │        6. CONVERSATIONAL AUDITOR       │ │ 7. ARCHITECTURE PROTOCOLS    │  │
+│  │   [Auditor]: How can we offset coal?   │ │   - Server Proxy Boundary    │  │
+│  │   [User]: Input dynamic query here...  │ │   - GenAI Schema Validation  │  │
+│  └────────────────────────────────────────┘ └──────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Module Breakdown
+
+#### `App.tsx`
+The primary application orchestrator. Coordinates application configurations, triggers generative pipeline requests to the server API, manages loading states during modeling runs, and provides preset physical options (e.g. Bamboo Smart Watch, Organic Coffee, Bio-Degradable Shoes).
+
+#### `LCAManifest.tsx` (Component 2 & 3)
+* **Digital Twin Simulator:** Contains stateful sliders for production scaling, material modifiers, packaging alternatives, logistics vectors, and end-of-life options.
+* **Custom Interactive SVG Graphing:** A mathematical graphing viewport comparing the active sandbox emissions profile, the conventional heavy-carbon benchmark, and the fully optimized option.
+
+#### `SupplyChainGraph.tsx` (Component 4 & 5)
+* **Logistics Timeline:** Renders a step-by-step graphical node-link path mapping the source, transit, manufacturing, packaging, retail, and end-of-life cycles.
+* **Stage Risk Profiling:** Identifies hotspots (scoring composite risks from 1 to 100) using diagnostic warning lights.
+* **Granular Stage Auditor:** Opens detailed metrics including specific materials, regional power grid dependencies, absolute carbon tonnage (MT CO2e), and green suggestions.
+
+#### `ESGAuditChat.tsx` (Component 6)
+An interactive conversational terminal that tracks the state of the active supply chain configuration and allows users to query compliance boundaries, coal-grid dependencies, or take-back lifecycles.
+
+#### `CVShowcase.tsx` (Component 7)
+Houses detailed technical architecture protocols split across categories like Systems Architecture, Intelligent Sourcing, and Mathematical Solvers, illustrating the robust design patterns used throughout the codebase.
+
+---
+
 ## 🛠️ Technology Stack
 
 * **Frontend Framework:** `React 19`
