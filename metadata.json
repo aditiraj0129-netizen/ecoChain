@@ -1,0 +1,8 @@
+{
+  "name": "EcoChain AI",
+  "description": "Interactive full-stack ESG Life Cycle Assessment (LCA) sandbox and supply chain optimizer fueled by server-side carbon analytics intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
